@@ -245,7 +245,7 @@ class Transformer implements ContentHandler{
         private Stack valueStack;
         
         public Object getResult(){
-            if(valueStack.size() == 0)
+            if(valueStac == null || (valueStack.size() == 0)
                 return null;
             return valueStack.peek();
         }
@@ -346,4 +346,4 @@ The result is similar to the one return from the code:
 }}}
 
 ====Notes - Multithreading and extensions====
-JSONParser is NOT thread-safe. And please note that JSON string such as [5,,,2] is accepted by the parser and is treated as [5,2]. This doesn't violate the [http://www.ietf.org/rfc/rfc4627.txt JSON specification], and it increases the error toleration of the input data. But it does confuse some JSON grammar checker which need a 'strict' mode. Considering adding this feature. Please refer [MappingBetweenJSONAndJavaEntities Mapping Between JSON and Java Entities] for more information on entity mapping while parsing.
+JSONParser is NOT thread-safe. And please note that JSON string such as [5,,,2] is accepted by the parser and is treated as [5,2]. This doesn't violate the [http://www.ietf.org/rfc/rfc4627.txt JSON specification], and it increases the error toleration of the input data. But it does confuse some JSON grammar checker which need a 'strict' mode. Considering adding this feature. Please refer [MappingBetweenJSONAndJavaEntities Mapping Between JSON and Java Entities] for more information on entity mapping while parsing
